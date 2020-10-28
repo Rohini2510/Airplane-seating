@@ -1,1 +1,1 @@
-web: node ./seat_arrange.js
+web: node seat_arrange.js
