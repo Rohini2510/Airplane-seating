@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="seat.css">
+</head>
+
+<body>
+    <h2> Choose seats by clicking the corresponding seat in the layout below:</h2>
+    <div class="main">
+        <h2>Ticket Booking</h2>
+        <div class="front">SCREEN</div>
+        <div id="holder">
+            <div id="name">
+                <%= name %>
+            </div>
+            <div id="length">
+                <%= length %>
+            </div>
+            <ul id="place">
+            </ul>
+        </div>
+    </div>
+
+</body>
+<script>
+    var comma_array = [];
+    var input_length = document.getElementById('length').innerHTML;
+    var num = "";
+    var n = document.getElementById('name').innerHTML;
+    var str = n.split('');
+    var comma = 0;
+
+    var html = "<table border='1'>";
+    for (var i = 0; i < str.length; i++) {
+        if (str[i] == " ") {
+            num = "";
+        } else if (str[i] == "," || str[i] == "-") {
+            if (str[i] == ",") {
+                comma++;
+            }
+            html += "<td>   </td>";
+            document.getElementById("holder").innerHTML = html;
+        } else if (str[i].match(/^\d*\.?\d*$/) != null && str[i].match(/^\d*\.?\d*$/).length > 0) {
+            num = num.concat(str[i]);
+            if (str[i + 1] == " ") {
+                html += "<td>" + num + "</td>";
+                document.getElementById("holder").innerHTML = html;
+            }
+        }
+        if (comma == input_length) {
+            html += "<tr>";
+            html += "</tr>";
+
+            comma = 0;
+        }
+    }
+    html += "</table>";
+    document.getElementById("holder").innerHTML = html;
+    for (var i = 0; i < document.getElementsByTagName("td").length; i++) {
+        if (document.getElementsByTagName("td")[i].innerHTML == "   ") {
+            document.getElementsByTagName("td")[i].setAttribute("class", "noborder");
+        }
+    }
+</script>
+
+</html>

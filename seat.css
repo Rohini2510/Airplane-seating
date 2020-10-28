@@ -1,0 +1,63 @@
+body {
+    background-image: url('images/airplane1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.main {
+    margin: 45px auto;
+    width: 53%;
+    background: rgba(238, 237, 237, 0.993);
+    padding: 30px 30px;
+}
+
+.main #holder {
+    margin: 45px auto;
+    width: 63%;
+    background: rgba(211, 202, 202, 0.993);
+    padding: 50px 30px;
+}
+
+.main h2 {
+    color: #000000;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-family: 'Kotta One', serif;
+}
+
+div,
+h2 {
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.front {
+    margin: 5px 4px 45px 38px;
+    background-color: #D88A04;
+    color: #fff;
+    text-align: center;
+    padding: 9px 0;
+    border-radius: 3px;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+td {
+    width: 25%;
+    background-color: rgb(151, 142, 142);
+}
+
+td.noborder {
+    border: none;
+    background-color: rgba(211, 202, 202, 0.993);
+}
